@@ -1,6 +1,4 @@
-data "aws_availability_zones" "asz" {
-  state = "available"
-}
+
 
 data "aws_ami" "ubuntu" {
   most_recent = true

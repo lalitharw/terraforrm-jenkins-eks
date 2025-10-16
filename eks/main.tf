@@ -1,6 +1,6 @@
 ##########################################
 # Variables
-##########################################
+########################################## 
 variable "vpc_cidr" {
   default = "192.168.0.0/16"
 }
@@ -17,9 +17,7 @@ variable "region" {
   default = "us-east-1"
 }
 
-variable "key_name" {
-  default = "your-key-pair" # optional, if you want SSH access
-}
+
 
 data "aws_availability_zones" "asz" {}
 
@@ -80,7 +78,7 @@ module "eks" {
       min_size      = 1
       max_size      = 3
       instance_type = ["t3.medium"]   # Enough memory for kubelet + pods
-      key_name      = var.key_name
+    
     }
   }
 
