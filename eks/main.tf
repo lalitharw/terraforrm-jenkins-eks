@@ -95,18 +95,18 @@ module "eks" {
 ##########################################
 # Outputs
 ##########################################
-output "cluster_endpoint" {
-  value = module.eks.cluster_endpoint
-}
+# output "cluster_endpoint" {
+#   value = module.eks.cluster_endpoint
+# }
 
-output "cluster_security_group_id" {
-  value = module.eks.cluster_security_group_id
-}
+# output "cluster_security_group_id" {
+#   value = module.eks.cluster_security_group_id
+# }
 
-output "node_group_role_arn" {
-  value = module.eks.node_groups["nodes"].iam_role_arn
-}
+# output "node_group_role_arn" {
+#   value = module.eks.node_groups["nodes"].iam_role_arn
+# }
 
-output "vpc_id" {
-  value = module.vpc.vpc_id
-}
+# output "vpc_id" {
+#   value = module.vpc.vpc_id
+# }
