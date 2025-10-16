@@ -44,7 +44,7 @@ resource "aws_route_table_association" "terraform-jenkins-eks-rta" {
 
 resource "aws_instance" "terraform-jenkins-instance" {
    ami           = data.aws_ami.ubuntu.id
-  instance_type = "t3.micro"
+  instance_type = "t3.medium"
   availability_zone = data.aws_availability_zones.azs.names[0]
   associate_public_ip_address = true
   subnet_id = aws_subnet.terraform-jenkins-eks-subnet.id
