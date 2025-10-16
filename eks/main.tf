@@ -26,6 +26,7 @@ data "aws_availability_zones" "asz" {}
 ##########################################
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
+  version = "5.1.2"
 
   name = "jenkins-vpc"
   cidr = var.vpc_cidr
@@ -37,6 +38,7 @@ module "vpc" {
   enable_nat_gateway   = true
   single_nat_gateway   = true
 
+  # Tags to associate VPC/Subnets with EKS
   tags = {
     "kubernetes.io/cluster/my-eks-cluster" = "shared"
   }
@@ -51,6 +53,7 @@ module "vpc" {
     "kubernetes.io/role/internal-elb"      = 1
   }
 }
+
 
 ##########################################
 # EKS Cluster Module
