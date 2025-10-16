@@ -26,7 +26,7 @@ data "aws_availability_zones" "asz" {}
 ##########################################
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "~> 4.0"
+  version = "3.14.4"
 
   name = "jenkins-vpc"
   cidr = var.vpc_cidr
